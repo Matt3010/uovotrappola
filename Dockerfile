@@ -20,8 +20,7 @@ RUN npm install --omit=dev
 # Copia il resto del codice
 COPY . .
 
-# Crea il file del database se non esiste per gestire correttamente i permessi
-RUN touch trappola.db
+RUN mkdir -p trappola
 
 # Comando per avviare il bot
 CMD ["node", "uovotrappola.js"]

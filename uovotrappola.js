@@ -16,9 +16,9 @@ const ytPlaylistId = process.env.YT_PLAYLIST_ID;
 const spPlaylistId = process.env.CX_SPOTIFY_PLAYLIST_ID;
 
 // ---------------- DATABASE SETUP (SQLite) ----------------
-const db = new sqlite3.Database('./trappola.db', (err) => {
+const db = new sqlite3.Database('./trappola/trappola.db', (err) => {
   if (err) console.error("❌ Errore apertura DB, la madama ci ha bloccato:", err.message);
-  else console.log("💾 Bando digitale connesso. Database operativo.");
+  else console.log("💾 Bando digitale connesso. Database operativo nella cartella dedicata.");
 });
 
 // Creazione Tabella Utenti se non esiste
