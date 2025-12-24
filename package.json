@@ -1,0 +1,20 @@
+{
+  "name": "uovotrappola",
+  "version": "2.0.0",
+  "description": "Bot Telegram per gestione playlist condivisa YouTube e Spotify",
+  "main": "uovotrappola.js",
+  "scripts": {
+    "start": "node uovotrappola.js",
+    "get-yt-token": "node get_yt_refresh_token.js",
+    "get-sp-token": "node get_spotify_token.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "googleapis": "^126.0.1",
+    "node-telegram-bot-api": "^0.63.0",
+    "spotify-web-api-node": "^5.0.2",
+    "sqlite3": "^5.1.7"
+  }
+}
