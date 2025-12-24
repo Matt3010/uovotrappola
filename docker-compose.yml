@@ -1,0 +1,25 @@
+services:
+  uovotrappola:
+    build: .
+    container_name: uovotrappola_bot
+    restart: always
+    env_file: .env
+    volumes:
+      - ./trappola.db:/usr/src/app/trappola.db
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower_trappola
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      # Aggiorna solo i container che hanno la label enable=true
+      - WATCHTOWER_LABEL_ENABLE=true
+      # Rimuove le vecchie immagini dopo l'aggiornamento per risparmiare spazio
+      - WATCHTOWER_CLEANUP=true
+      # Intervallo di controllo in secondi (es. 300 = 5 minuti)
+      - WATCHTOWER_POLL_INTERVAL=300
+    command: --label-enable --cleanup

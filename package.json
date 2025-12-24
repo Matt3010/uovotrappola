@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node uovotrappola.js",
     "get-yt-token": "node get_yt_refresh_token.js",
-    "get-sp-token": "node get_spotify_token.js"
+    "get-sp-token": "node get_spotify_token.js",
+    "docker:deploy": "docker buildx build --platform linux/arm64 -t matt3010/uovotrappola:latest . --push --no-cache"
   },
   "author": "",
   "license": "ISC",
